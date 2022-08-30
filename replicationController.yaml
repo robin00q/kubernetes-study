@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  name: myapp-rc
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template: # 무슨 Pod 를 생성할건데? 에 대한 템플릿 정의
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  replicas: 3
+    
