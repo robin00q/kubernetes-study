@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  containers: 
+  - name: nginx-container
+    image: nginx
+  tolerations: # app=blue tainted pod 에 접근 가능
+  - key: "app"
+    operator: "Equal"
+    value: "blue"
+    effect: "NoSchedule"

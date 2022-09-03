@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx
+  nodeSelector:
+    size: Large # node 의 레이블 정의
+    
