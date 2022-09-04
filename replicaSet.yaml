@@ -5,8 +5,6 @@ metadata:
   labels:
     app: myapp
     type: front-end
-  annotations:
-    buildversion: 1.34
 spec:
   template: # 무슨 Pod 를 생성할건데? 에 대한 템플릿 정의
     metadata:
