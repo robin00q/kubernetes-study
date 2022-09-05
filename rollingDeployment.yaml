@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-rolling-deployment
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  template: # Pod Template
+    metadata:
+      name: myapp-pod
+      labels:
+        app: myapp
+        type: front-end
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels: 
+      type: front-end
+  replicas: 3
+  
+    
+    
