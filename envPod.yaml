@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: env-pod
+spec:
+  containers:
+  - name: envpod
+    image: ubuntu
+    env:
+    - name: COLOR
+      value: pink
