@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-pod
+  labels:
+    name: configmap-pod
+spec:
+  containers:
+  - name: configmap-container
+    image: ubuntu
+    ports:
+    - containerPort: 8080
+    envFrom:
+    - configMapRef:
+        name: app-config
+    args: ["sleep", "2000"]
